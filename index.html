@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Документ без названия</title>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript">
+  	$(document).ready(function() {
+		
+	});
+  </script> 
+</head>
+
+<body>    
+ 
+<div></div>
+</body>
+</html>
+
+
+function xmlStart() { $("body").prepend('<textarea id="yml" style="width:100%; height:500px;" />'); $("#yml").text('<?xml version="1.0" encoding="utf-8"?><!DOCTYPE yml_catalog SYSTEM "shops.dtd"><yml_catalog date="2010-04-01 17:00"><shop><name>BestShop</name><company>Best online seller Inc.</company><url>http://best.seller.ru/</url><platform>CMS</platform><version>2.3</version><agency>Agency</agency><email>CMS@CMS.ru</email><currencies><currency id="RUR" rate="1"/></currencies><categories><category id="1">Одежда</category></categories><offers>') }
+
+function xmlOffers() { for(i=0; i<json.itemList.length; i++) { var xml = '<offer id="'+json.itemList[i].itemId+'" available="true"><url>'+json.itemList[i].href+'</url><price>'+json.itemList[i].price+'</price></offer>'; $("#yml")[0].value+= xml; } }
+
+function xmlEnd() { $("#yml")[0].value+= '</offers></shop></yml_catalog>'; }
+
+
+
+
+
+
+
+
+
+
+
+
+
