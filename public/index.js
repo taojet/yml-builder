@@ -6,7 +6,7 @@ function xmlStart() {
 <!-- yml по каждому товару(запускается на каждой странице) -->
 function xmlOffer() {
     for (i = 0; i < json.itemList.length; i++) {
-        var xml = '<offer id="' + json.itemList[i].itemId + '" available="true"><url>' + json.itemList[i].href + '</url><price>'+ json.itemList[i].price +' руб.</price><currencyId>RUR</currencyId><categoryId>1</categoryId><picture>' + json.itemList[i].image + '</picture><picture>' + json.itemList[i].image + '</picture><name>Товар #'+ i +' </name><param name="Цвет">Синий,Зеленый,Красный</param><param name="Размер">XXL,LLX</param></offer>';
+        var xml = '<offer id="' + json.itemList[i].itemId + '" available="true"><url>' + json.itemList[i].href + '</url><price>'+ json.itemList[i].price +'</price><currencyId>RUR</currencyId><categoryId>1</categoryId><picture>' + json.itemList[i].image + '</picture><picture>' + json.itemList[i].image + '</picture><name>Товар #'+ i +' </name><param name="Цвет">Синий,Зеленый,Красный</param><param name="Размер">XXL,LLX</param></offer>';
         $("#ymlYandex")[0].value += xml;
 	$("#ymlMail")[0].value += xml;
     }
