@@ -6,9 +6,10 @@ function xmlStart() {
 <!-- yml по каждому товару(запускается на каждой странице) -->
 function xmlOffer() {
     for (i = 0; i < json.itemList.length; i++) {
-    	var cost = ( parseFloat(json.itemList[i].price) + parseFloat($("#cur_delivery")[0].value) ) * (parseFloat($("#cur_rate")[0].value));
+    	var cost = ( parseFloat(json.itemList[i].price) + 
+    		         parseFloat($("#cur_delivery")[0].value) ) * (parseFloat($("#cur_rate")[0].value));
 
-    	cost = ( 1 + parseFloat($("#cur_comission")[0].value / 100.0) * cost;
+    	cost = ( 1 + parseFloat($("#cur_comission")[0].value / 100.0)) * cost;
 
 
         var xml = '<offer id="' + json.itemList[i].itemId + '" available="true"><url>' + json.itemList[i].href + '</url><price>'+ 
